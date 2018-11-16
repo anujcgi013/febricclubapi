@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDb)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\aspnet-FebricClubApi-20181111035830.mdf;Initial Catalog=aspnet-FebricClubApi-20181111035830;Integrated Security=True" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Git\\FebricClubApi\\FebricClubApi\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+  <parameter name="FebricClubEntities-Web.config Connection String" description="FebricClubEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/ProductDataModel.csdl|res://*/ProductDataModel.ssdl|res://*/ProductDataModel.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=demo013.database.windows.net;initial catalog=FebricClub;persist security info=True;user id=anujvolvo;password=Volvo@13;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Git\\FebricClubApi\\FebricClubApi\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='FebricClubEntities']/@connectionString" />
+  </parameter>
+</parameters>

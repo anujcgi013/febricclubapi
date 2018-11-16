@@ -1,0 +1,10 @@
+C:\Git\FebricClubApi\ProductDataAccess\bin\Release\ProductDataAccess.dll.config
+C:\Git\FebricClubApi\ProductDataAccess\bin\Release\ProductDataAccess.dll
+C:\Git\FebricClubApi\ProductDataAccess\bin\Release\ProductDataAccess.pdb
+C:\Git\FebricClubApi\ProductDataAccess\bin\Release\EntityFramework.dll
+C:\Git\FebricClubApi\ProductDataAccess\bin\Release\EntityFramework.SqlServer.dll
+C:\Git\FebricClubApi\ProductDataAccess\bin\Release\EntityFramework.xml
+C:\Git\FebricClubApi\ProductDataAccess\bin\Release\EntityFramework.SqlServer.xml
+C:\Git\FebricClubApi\ProductDataAccess\obj\Release\ProductDataAccess.csprojResolveAssemblyReference.cache
+C:\Git\FebricClubApi\ProductDataAccess\obj\Release\ProductDataAccess.dll
+C:\Git\FebricClubApi\ProductDataAccess\obj\Release\ProductDataAccess.pdb

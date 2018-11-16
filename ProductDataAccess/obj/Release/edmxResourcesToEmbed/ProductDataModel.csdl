@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="FebricClubModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Company">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Guid" Nullable="false" />
+    <Property Name="CompanyName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CompanyAddress" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="ContactNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+    <NavigationProperty Name="ProductDetails" Relationship="Self.FK_ProductDetails_Company" FromRole="Company" ToRole="ProductDetails" />
+  </EntityType>
+  <EntityType Name="ProductDetail">
+    <Key>
+      <PropertyRef Name="SNumber" />
+    </Key>
+    <Property Name="SNumber" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CompanyId" Type="Guid" Nullable="false" />
+    <Property Name="BundleNumber" Type="Int32" />
+    <Property Name="Length" Type="Int32" />
+    <Property Name="Weight" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="Comments" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Company" Relationship="Self.FK_ProductDetails_Company" FromRole="ProductDetails" ToRole="Company" />
+  </EntityType>
+  <Association Name="FK_ProductDetails_Company">
+    <End Role="Company" Type="Self.Company" Multiplicity="1" />
+    <End Role="ProductDetails" Type="Self.ProductDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Company">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="ProductDetails">
+        <PropertyRef Name="CompanyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="FebricClubEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Companies" EntityType="Self.Company" />
+    <EntitySet Name="ProductDetails" EntityType="Self.ProductDetail" />
+    <AssociationSet Name="FK_ProductDetails_Company" Association="Self.FK_ProductDetails_Company">
+      <End Role="Company" EntitySet="Companies" />
+      <End Role="ProductDetails" EntitySet="ProductDetails" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
